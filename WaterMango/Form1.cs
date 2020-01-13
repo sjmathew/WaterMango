@@ -35,6 +35,7 @@ namespace WaterMango
         bool check4 = false;
         bool check5 = false;
 
+        // Button for Plant 1
         private void button1_Click(object sender, EventArgs e)
         {
             check1 = story4(time1);
@@ -67,6 +68,7 @@ namespace WaterMango
 
         }
 
+        // Button for Plant 2
         private void button2_Click(object sender, EventArgs e)
         {
             check2 = story4(time2);
@@ -98,6 +100,7 @@ namespace WaterMango
             }
         }
 
+        // Button for Plant 3
         private void button3_Click(object sender, EventArgs e)
         {
             check3 = story4(time3);
@@ -114,8 +117,6 @@ namespace WaterMango
                 label8.Text = "Please wait until 30 seconds to water again";
             }
 
-            //timer3.Start();
-            //time3 = 0;
         }
 
         private void timer3_Tick(object sender, EventArgs e)
@@ -131,6 +132,7 @@ namespace WaterMango
             }
         }
 
+        // Button for Plant 4
         private void button4_Click(object sender, EventArgs e)
         {
             check4 = story4(time4);
@@ -147,8 +149,6 @@ namespace WaterMango
                 label9.Text = "Please wait until 30 seconds to water again";
             }
 
-            //timer4.Start();
-            //time4 = 0;
         }
 
         private void timer4_Tick(object sender, EventArgs e)
@@ -164,6 +164,7 @@ namespace WaterMango
             }
         }
 
+        // Button for Plant 5
         private void button5_Click(object sender, EventArgs e)
         {
             check5 = story4(time5);
@@ -180,9 +181,6 @@ namespace WaterMango
                 label10.Text = "Please wait until 30 seconds to water again";
             }
 
-            //timer5.Start();
-            //time5 = 0;
-
         }
 
         private void timer5_Tick(object sender, EventArgs e)
@@ -198,6 +196,8 @@ namespace WaterMango
             }
         }
 
+        // Method for User Story 2
+        // As a user, I want to start and stop watering of a plant. A plant takes 10 seconds to water.
         private string story2(int time, string status)
         {
             if (time >= 10)
@@ -213,6 +213,9 @@ namespace WaterMango
             }
         }
 
+        // Method for User Story 4
+        // Plants need to rest from watering, so as a User, 
+        // I should not be able to water the plant again within 30 seconds of the last watering session.
         private bool story4(int time)
         {
             if((time >= 30) || (time == 0))
@@ -227,6 +230,9 @@ namespace WaterMango
 
         }
 
+        // Method for User Story 5
+        // As a user, I should be visually alerted if a plant hasn’t been watered for more than 6 hours.
+        // Instead of 6 hours, its 60 seconds, for testing purposes.
         private bool story5(int time)
         {
             if(time >= 60)
@@ -240,23 +246,10 @@ namespace WaterMango
             }
         }
 
+        // Method for User Story 3
+        // The system should support watering multiple plants at the same time.
         private void button6_Click(object sender, EventArgs e)
         {
-            /*timer1.Start();
-            time1 = 0;
-
-            timer2.Start();
-            time2 = 0;
-
-            timer3.Start();
-            time3 = 0;
-
-            timer4.Start();
-            time4 = 0;*/
-
-            //timer5.Start();
-            //time5 = 0;
-
             check1 = story4(time1);
 
             if (check1 == true)
